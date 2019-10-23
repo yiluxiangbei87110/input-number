@@ -61,7 +61,6 @@ export default {
       let val = $event.target.value
       if (val && !isNaN(val)) {
         val = Number(val)
-        console.log('val', val)
         if (val > this.max) {
           val = this.max
         }
