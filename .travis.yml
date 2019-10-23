@@ -6,6 +6,8 @@ node_js:
 - lts/*
 git:
   depth: 3
+before_install:
+- chmod +x ./build.sh
 install:
 - yarn --frozen-lockfile
 - yarn test
