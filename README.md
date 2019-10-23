@@ -1,74 +1,91 @@
-# input-number
+# el-number-range
 
-[![Build Status](https://badgen.net/travis/yiluxiangbei87110/input-number/master)](https://travis-ci.com/yiluxiangbei87110/input-number)
-[![NPM Download](https://badgen.net/npm/dm/@yiluxiangbei87110/input-number)](https://www.npmjs.com/package/@yiluxiangbei87110/input-number)
-[![NPM Version](https://badgen.net/npm/v/@yiluxiangbei87110/input-number)](https://www.npmjs.com/package/@yiluxiangbei87110/input-number)
-[![NPM License](https://badgen.net/npm/license/@yiluxiangbei87110/input-number)](https://github.com/yiluxiangbei87110/input-number/blob/master/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yiluxiangbei87110/input-number/pulls)
+[![Build Status](https://travis-ci.com/FEMessage/el-number-range.svg?branch=master)](https://travis-ci.com/FEMessage/el-number-range)
+[![NPM Download](https://img.shields.io/npm/dm/@femessage/el-number-range.svg)](https://www.npmjs.com/package/@femessage/el-number-range)
+[![NPM Version](https://img.shields.io/npm/v/@femessage/el-number-range.svg)](https://www.npmjs.com/package/@femessage/el-number-range)
+[![NPM License](https://img.shields.io/npm/l/@femessage/el-number-range.svg)](https://github.com/FEMessage/el-number-range/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/FEMessage/el-number-range/pulls)
 [![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)
 
-short description + sample image(png/gif/mp4)
+数字范围输入框组件
 
-## Table of Contents
+![introduce](https://i.screenshot.net/8lw5osg)
 
-- [input-number](#input-number)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Features](#features)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Links](#links)
-  - [License](#license)
+## Table of Contents <!-- omit in toc -->
+
+* [Introduction](#introduction)
+* [Feature](#feature)
+* [Demo](#demo)
+* [Install](#install)
+* [Example](#example)
+  * [设置最大值](#设置最大值)
+  * [设置最小值](#设置最小值)
+* [License](#license)
 
 ## Introduction
 
-一个简单的input-number vue组件，可以设置min、max属性，满足增减、输入等操作。
+数字范围输入框，适用于需要输入范围的场景，比如价格，积分范围。通过对外暴露 input 事件，使用者可以通过 v-model 进行范围绑定，上手简单。
 
+[⬆ Back to Top](#table-of-contents)
 
+## Feature
 
-## Features
+* 自动进行范围纠正;
+* 可自定义输入框范围 min - max;
 
-- 可以设置 max、min属性
-- 可以点击增减按钮进行操作，不在范围内后，按钮置灰不可点击。
-- 可以输入指定范围内的数字
+[⬆ Back to Top](#table-of-contents)
+
+## Demo
+
+* [doc and online demo](https://femessage.github.io/el-number-range/)
+
+[⬆ Back to Top](#table-of-contents)
 
 ## Install
 
-yarn 
+```sh
+# 确保提前安装了element-ui且注册了el-input-number
+yarn add element-ui --save
 
-## Usage
-
-```vue
-
-<template>
-    <div>
-        <input-number v-model='value' :max="10" :min="0"/>
-    </div>
-</template>
-<script>
-import InputNumber from 'inputNumber'
-export default {
-    name:'test-input-number',
-    components:{
-        'input-number':InputNumber
-    },
-    data(){
-        return {
-            value:2
-        }
-    }
-}
-</script>
-
+# Step1 安装
+yarn add @femessage/el-number-range
 ```
 
-![](https://user-gold-cdn.xitu.io/2019/10/23/16df8f5e0bbba131?w=1241&h=409&f=png&s=35975)
+```vue
+// Step2 在需要的.vue 文件中
+<template>
+  <el-number-range v-model="range" />
+</template>
 
-## Links
+<script>
+import ElNumberRange from '@femessage/el-number-range'
 
-- [docs](https://yiluxiangbei87110.github.io/input-number/)
+export default {
+  components: {
+    ElNumberRange
+  },
+  data() {
+    return {
+      version: [0, 1000]
+    }
+  }
+}
+</script>
+```
 
+[⬆ Back to Top](#table-of-contents)
 
+## Example
+
+### 设置最大值
+
+![max](https://i.screenshot.net/e3yvzt8)
+
+### 设置最小值
+
+![min](https://i.screenshot.net/4n4pmum)
+
+[⬆ Back to Top](#table-of-contents)
 
 ## License
 

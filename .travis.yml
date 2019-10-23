@@ -6,23 +6,18 @@ node_js:
 - lts/*
 git:
   depth: 3
-before_install:
-- chmod +x ./build.sh
 install:
 - yarn --frozen-lockfile
-- yarn test
 script:
-- ./build.sh
-after_script:
-- ./notify.sh
+- yarn build
 cache: yarn
 deploy:
-# - provider: pages
-#   local-dir: docs
-#   github-token: $GITHUB_TOKEN
-#   skip-cleanup: true
-#   keep-history: true
+- provider: pages
+  local-dir: docs
+  github-token: $GITHUB_TOKEN
+  skip-cleanup: true
+  keep-history: true
 - provider: npm
-  email: 12@qq.com
+  email: levy9527@qq.com
   api_key: $NPM_TOKEN
   skip-cleanup: true

@@ -12,21 +12,10 @@ module.exports = {
   onlyMilestones: false,
   changelogFilename: 'CHANGELOG.md',
   template: {
-    issue: '- {{name}} [{{text}}]({{url}})',
-    group: '\n### {{heading}}\n'
+    issue: '- {{name}} [{{text}}]({{url}})'
   },
-  // https://github.com/nuxt/nuxt.js/releases
-  // https://gitmoji.carloscuesta.me
   groupBy: {
     '✨ New Features:': ['enhancement'],
-    '🐛 Bug Fixes:': ['bug'],
-    '📖 Documentation:': ['documentation'],
-    '💅 Refactors:': ['refactor'],
-    '♻️ Tests:': ['test'],
-    '🚀 Performance:': ['performance'],
-    '⚓ Dependency upgrades:': ['dependencies'],
-    '🏡 Chore:': ['chore'],
-    '💄 Style:': ['style'],
-    '🎩 Hack': ['hack']
+    '🐛 Bug Fixes:': ['bug']
   }
 }

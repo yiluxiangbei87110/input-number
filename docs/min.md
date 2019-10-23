@@ -1,14 +1,15 @@
-基本用法
+设置最小值
 
 ```vue
 <template>
-  <el-number-range v-model="range"/>
+  <el-number-range v-model="range" :min="min" />
 </template>
 <script>
 export default {
   data() {
     return {
-      range: []
+      range: [],
+      min: 20
     }
   }
 }
