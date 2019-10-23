@@ -23,6 +23,6 @@ deploy:
 #   skip-cleanup: true
 #   keep-history: true
 - provider: npm
-  email: 1225459083@qq.com
+  email: 12@qq.com
   api_key: $NPM_TOKEN
   skip-cleanup: true
