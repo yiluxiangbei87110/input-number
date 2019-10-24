@@ -1,35 +1,39 @@
 {
-  "name": "@femessage/el-number-range",
-  "version": "1.1.0",
-  "description": "",
-  "author": "https://github.com/FEMessage",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/FEMessage/el-number-range.git"
-  },
-  "keywords": ["vue", "sfc", "component"],
-  "files": ["src", "dist", "yarn.lock"],
-  "main": "dist/el-number-range.umd.js",
-  "module": "dist/el-number-range.esm.js",
-  "unpkg": "dist/el-number-range.min.js",
-  "browser": {
-    "./sfc": "src/el-number-range.vue"
-  },
-  "scripts": {
-    "dev": "vue-styleguidist server",
-    "doc": "vue-styleguidist build",
-    "test": "jest",
-    "build":
-      "npm run build:unpkg & npm run build:es & npm run build:umd & npm run doc",
-    "build:umd":
-      "rollup --config build/rollup.config.js --format umd --file dist/el-number-range.umd.js",
-    "build:es":
-      "rollup --config build/rollup.config.js --format es --file dist/el-number-range.esm.js",
-    "build:unpkg":
-      "rollup --config build/rollup.config.js --format iife --file dist/el-number-range.min.js",
-    "precommit": "pretty-quick --staged"
-  },
+    "name": "@yiluxiangbei87110/input-number",
+    "version": "1.0.0",
+    "description": "",
+    "author": "https://github.com/yiluxiangbei87110",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/yiluxiangbei87110/input-number.git"
+    },
+    "keywords": [
+      "vue",
+      "sfc",
+      "component"
+    ],
+    "files": [
+      "src",
+      "dist"
+    ],
+    "main": "dist/input-number.umd.js",
+    "module": "dist/input-number.esm.js",
+    "unpkg": "dist/input-number.min.js",
+    "browser": {
+      "./sfc": "src/input-number.vue"
+    },
+    "scripts": {
+      "dev": "vue-styleguidist server",
+      "test": "jest --verbose",
+      "doc": "vue-styleguidist build",
+      "build": "npm run build:unpkg & npm run build:es & npm run build:umd & npm run doc",
+      "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/input-number.umd.js",
+      "build:es": "rollup --config build/rollup.config.js --format es --file dist/input-number.esm.js",
+      "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/input-number.min.js",
+      "stdver": "standard-version -m '[skip ci] chore(release): v%s'",
+      "release": "gren release --override"
+    },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-transform-runtime": "^7.4.3",

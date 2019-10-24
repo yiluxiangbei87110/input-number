@@ -19,7 +19,7 @@ module.exports = {
   styleguideDir: 'docs',
   pagePerSection: true,
   ribbon: {
-    url: 'https://github.com/FEMessage/el-number-range'
+    url: 'https://github.com/FEMessage/input-number'
   },
   require: ['./styleguide/element.js'],
   sections: [
