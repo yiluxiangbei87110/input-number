@@ -19,9 +19,8 @@ module.exports = {
   styleguideDir: 'docs',
   pagePerSection: true,
   ribbon: {
-    url: 'https://github.com/FEMessage/input-number'
+    url: 'https://github.com/yiluxiangbei87110/input-number'
   },
-  require: ['./styleguide/element.js'],
   sections: [
     {
       name: 'Components',
