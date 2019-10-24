@@ -8,7 +8,6 @@ git:
   depth: 3
 install:
 - yarn --frozen-lockfile
-- yarn test
 script:
 - yarn build
 cache: yarn
@@ -19,6 +18,6 @@ deploy:
   skip-cleanup: true
   keep-history: true
 - provider: npm
-  email: 1225459083@qq.com
+  email: levy9527@qq.com
   api_key: $NPM_TOKEN
   skip-cleanup: true
