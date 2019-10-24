@@ -17,6 +17,7 @@ short description + sample image(png/gif/mp4)
   * [Features](#features)
   * [Install](#install)
   * [Usage](#usage)
+  * [Test](#test)
   * [Links](#links)
   * [License](#license)
 
@@ -58,7 +59,12 @@ export default {
 </script>
 ```
 
-![](https://user-gold-cdn.xitu.io/2019/10/23/16df8f5e0bbba131?w=1241&h=409&f=png&s=35975)
+![](https://user-gold-cdn.xitu.io/2019/10/24/16dfcc85e8951b98?w=1162&h=909&f=png&s=71905)
+
+
+## Test
+
+![](https://user-gold-cdn.xitu.io/2019/10/24/16dfcc8bb2878b69?w=734&h=518&f=png&s=58002)
 
 ## Links
 
