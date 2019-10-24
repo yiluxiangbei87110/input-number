@@ -2,14 +2,13 @@
 
 ```vue
 <template>
-  <el-number-range v-model="range"/>
+  <input-number/>
 </template>
+
 <script>
 export default {
   data() {
-    return {
-      range: []
-    }
+    return {}
   }
 }
 </script>

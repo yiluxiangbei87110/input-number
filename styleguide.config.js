@@ -2,27 +2,24 @@ const {VueLoaderPlugin} = require('vue-loader')
 const path = require('path')
 const glob = require('glob')
 
-const demos = glob.sync('docs/!(basic).md')
-const demoSections = [
-  {
-    name: 'basic',
-    content: 'docs/basic.md'
-  }
-].concat(
-  demos.map(filePath => ({
-    name: path.basename(filePath, '.md'),
-    content: filePath
-  }))
-)
-
-module.exports = {
-  styleguideDir: 'docs',
-  pagePerSection: true,
-  ribbon: {
-    url: 'https://github.com/FEMessage/el-number-range'
-  },
-  require: ['./styleguide/element.js'],
-  sections: [
+const sections = (() => {
+  const docs = glob
+    .sync('docs/*.md')
+    .map(p => ({name: path.basename(p, '.md'), content: p}))
+  const demos = []
+  let faq = '' // 约定至多只有一个faq.md
+  const guides = []
+  docs.forEach(d => {
+    if (/^faq$/i.test(d.name)) {
+      d.name = d.name.toUpperCase()
+      faq = d
+    } else if (/^guide-/.test(d.name)) {
+      guides.push(d)
+    } else {
+      demos.push(d)
+    }
+  })
+  return [
     {
       name: 'Components',
       components: 'src/*.vue',
@@ -30,9 +27,23 @@ module.exports = {
     },
     {
       name: 'Demo',
-      sections: demoSections
-    }
-  ],
+      sections: demos,
+      sectionDepth: 2
+    },
+    ...(faq ? [faq] : []),
+    ...(guides.length
+      ? [{name: 'Guide', sections: guides, sectionDepth: 2}]
+      : [])
+  ]
+})()
+
+module.exports = {
+  styleguideDir: 'docs',
+  pagePerSection: true,
+  ribbon: {
+    url: 'https://github.com/yiluxiangbei87110/input-number'
+  },
+  sections,
   webpackConfig: {
     module: {
       rules: [
@@ -50,11 +61,11 @@ module.exports = {
           loaders: ['style-loader', 'css-loader']
         },
         {
-          test: /\.styl(us)?$/,
-          loaders: ['vue-style-loader', 'css-loader', 'stylus-loader']
+          test: /\.less$/,
+          loaders: ['vue-style-loader', 'css-loader', 'less-loader']
         },
         {
-          test: /\.(woff2?|eot|[to]tf)(\?.*)?$/,
+          test: /\.(woff2?|eot|[ot]tf)(\?.*)?$/,
           loader: 'file-loader'
         }
       ]
