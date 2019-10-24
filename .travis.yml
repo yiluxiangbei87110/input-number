@@ -8,6 +8,7 @@ git:
   depth: 3
 install:
 - yarn --frozen-lockfile
+- yarn test
 script:
 - yarn build
 cache: yarn
